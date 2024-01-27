@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function Button({ children, onClick, type, className, ...props }) {
+export default function Button({ children, onClick = undefined, type, className, ...props }) {
   return (
     <Button
       {...props}
