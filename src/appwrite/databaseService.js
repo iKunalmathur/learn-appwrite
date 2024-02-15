@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-catch */
-import { Client, Database, ID, Query } from 'appwrite'
+import { Client, Databases, ID, Query } from 'appwrite'
 import config from '../config/config'
 
 class DatabaseService {
@@ -11,11 +11,11 @@ class DatabaseService {
       .setEndpoint(config.appWrite.api)
       .setProject(config.appWrite.projectId)
 
-    this.database = new Database(this.client)
+    this.database = new Databases(this.client)
   }
 
   // getPosts
-  async getPosts(queries = [Query.equal('status', 'active')]) {
+  async getPosts(queries = [Query.equal('status', 'published')]) {
     try {
       return await this.database.listDocuments(
         config.appWrite.databaseId,
