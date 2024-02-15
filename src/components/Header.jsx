@@ -14,7 +14,6 @@ export default function Header() {
     { name: 'Sign Up', path: '/signup', active: !authStatus },
     { name: 'All Posts', path: '/all-posts', active: authStatus },
     { name: 'Add Post', path: '/add-post', active: authStatus },
-    { name: 'Edit Post', path: '/edit-post', active: authStatus }
   ]
 
   return (

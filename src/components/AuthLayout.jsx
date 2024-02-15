@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 export default function AuthLayout({ children, isAuthRequired = true }) {
-  const [loading, setLoading] = React.useState(false)
+  const [ loading, setLoading ] = React.useState(false)
   const authStatus = useSelector((state) => state.auth.status)
 
   const navigate = useNavigate()
@@ -17,7 +17,7 @@ export default function AuthLayout({ children, isAuthRequired = true }) {
     }
 
     setLoading(false)
-  }, [isAuthRequired, authStatus])
+  }, [ isAuthRequired, authStatus, navigate ])
 
   return loading ? <h1>Loading...</h1> : <>{children}</>
 }

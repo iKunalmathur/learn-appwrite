@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Controller } from 'react-hook-form'
 import { Editor } from '@tinymce/tinymce-react'
+import config from '../config/config'
 
 function RTEditor({ name, control, label, defaultValue = '' }) {
   return (
@@ -15,6 +16,7 @@ function RTEditor({ name, control, label, defaultValue = '' }) {
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
+            apiKey={config.tinyApiKey}
             onEditorChange={onChange}
             initialValue={defaultValue}
             init={{
